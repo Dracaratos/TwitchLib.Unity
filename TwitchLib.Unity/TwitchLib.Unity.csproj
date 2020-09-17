@@ -48,7 +48,7 @@
     <PackageReference Include="TwitchLib.PubSub" Version="3.1.4" />
     <PackageReference Include="ILMerge" Version="3.0.41" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <Reference Include="UnityEditor">
       <HintPath>..\Assemblies\UnityEditor.dll</HintPath>
@@ -56,6 +56,10 @@
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\Assemblies\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\Assemblies\UnityEngine.CoreModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>
