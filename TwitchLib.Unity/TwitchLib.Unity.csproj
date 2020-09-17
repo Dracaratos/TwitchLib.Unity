@@ -46,18 +46,22 @@
     <PackageReference Include="TwitchLib.Api" Version="3.1.3" />
     <PackageReference Include="TwitchLib.Client" Version="3.1.5" />
     <PackageReference Include="TwitchLib.PubSub" Version="3.1.4" />
+    <PackageReference Include="ILMerge" Version="3.0.41" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="UnityEditor">
       <HintPath>..\Assemblies\UnityEditor.dll</HintPath>
+      <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\Assemblies\UnityEngine.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  
+  <Target Name="ILMerge" AfterTargets="Build">
+    <Exec Command="&quot;$(ILMergeConsolePath)&quot; /ndebug /wildcards /lib:&quot;$(SolutionDir)Assemblies&quot; /out:&quot;$(OutDir)$(TargetFileName)&quot; $(OutDir)*.dll" />
   </Target>
 
 </Project>
