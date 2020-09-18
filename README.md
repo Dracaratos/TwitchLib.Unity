@@ -7,6 +7,12 @@
 ## About
 TwitchLib repository representing all code belonging to the implementation of TwitchLib for Unity. Maintained primarily by LuckyNoS7evin & GameDevCompany.
 
+# This version maintained by Dracaratos for Unity 2018.4.16f1 - For other Unity versions, Ask on my Disc: https://discord.gg/FAp8dNV
+## Built versions in Release_DLL's packaged with all TwitchLib Assets
+### To Build: Copy the DLL's from Assemblies/your unity studio version to Assemblies, open the .csproj in Visual Studio, then go to Project -> Add References -> Navigate to your Assemblies folder and add the three. Afterwards, double click the TwitchLib.Unity in the Solution Explorer or open the .csproj file with a Notepad or any text editor, and find the lines <Reference Include="UnityEditor">. After every HintPath for the UnityEditor, UnityEngine, and UnityEngine.CoreModule press Enter after </HintPath> and add the line <Private>false</Private>, then go to Build -> Build
+
+ 
+
 * **Client**: Handles chat and whisper Twitch services. Complete with a suite of events that fire for virtually every piece of data received from Twitch. Helper methods also exist for replying to whispers or fetching moderator lists.
 * **Api**: Complete coverage of v3, v5, and Helix endpoints. The API is now a singleton class. This class allows fetching all publically accessable data as well as modify Twitch services like profiles and streams. Provides also service to check for new follows and if stream is up.
 * **PubSub**: Supports all documented Twitch PubSub topics as well as a few undocumented ones.
